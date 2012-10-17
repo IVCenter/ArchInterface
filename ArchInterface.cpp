@@ -1135,8 +1135,22 @@ cout << "Type in JSON: " << type << "\n";
             cout << result << "\n";
     }
 }
+void makeDir(string dir)
+{
+#ifdef _WIN32
+_mkdir(dir.c_str());
+#else
+mkdir(dir.c_str(),0750);
+#endif
+}
 void testCode()
 {
+//Add folders
+string dir;
+dir = "queries";
+makeDir(dir);
+dir = "data";
+makeDir(dir);
 
 
 
@@ -5754,7 +5768,11 @@ vector<string> fileIntoArray(const char* file)
         array.push_back(token);
 
     }
-
+    if(array[array.size()-1] == "")
+    {
+	//int pos = array.size() -1;
+	array.pop_back();
+    }
 return array;
 }
 vector< vector<string> > parseConfigFile()

@@ -10,7 +10,10 @@ ArchInterface requires Pgsql and MxML these are included in the same named folde
 You can use the CodeBlocks project to immediately compile.
 
 Install Linux:
---make using any standard compilers and linking your psgsql and mxml libs--
+
+1. Modify 'build' file to proper location of pgsql library.
+
+2. Run ./build
 
 Running ArchInterface
 

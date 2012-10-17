@@ -5,12 +5,20 @@
 #include <time.h>
 //#include <tchar.h>
 #include <cstdlib>
-#include <pgsql/libpq-fe.h>
+#include <libpq-fe.h>
 //Inorder to compile with GCC you must also include the library: libpq.lib
 #include <string>
 #include <sstream>
 #include <vector>
+#include <sys/types.h>
+#include <sys/stat.h>
 #include <mxml.h>
+
+//for Windows
+#ifdef _WIN32
+#include <direct.h>
+#endif
+
 //#include <include/curl/curl.h>
 //#include "shapelib/shapefil.h"
 

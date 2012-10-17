@@ -1,0 +1,1 @@
+g++ -g ArchInterface.cpp -o ArchInterface -L/usr/pgsql/lib -lpq -lmxml 

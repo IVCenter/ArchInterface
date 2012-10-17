@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?><kml><Document><name>ZB</name><query>publication='KIS10'</query><timestamp>2012036235837</timestamp><Placemark><name>50563</name><description>gid: 579
+basket: 50563
+chk: 19
+d_code: SO-STONE_OBJECT
+locus: 7054
+square: A1
+date: 072510
+area: D
+publication: KIS10
+heightinstrument: 1.459
+poleheight: 1.486
+bone: NULL
+flint: NULL
+pottery: NULL
+rc: NULL
+soilsample: NULL
+crate: 58
+location: Storage
+the_geom: 739937.21259221, 3373215.8156312, 1451.197693212
+</description><LookAt><longitude>35.4991377749059</longitude><latitude>30.4672489448774</latitude><altitude>0</altitude><range>10</range><tilt>0</tilt><heading>0</heading></LookAt><styleUrl>#msn_GR</styleUrl><Point><altitudeMode>absolute</altitudeMode><coordinates>739937.21259221, 3373215.8156312, 1451.197693212</coordinates></Point></Placemark><Placemark><name>50106</name><description>gid: 126
+basket: 50106
+chk: 23
+d_code: ZB-PHOTO
+locus: 7012
+square: A2
+date: 70610
+area: D
+publication: KIS10
+heightinstrument: 1.551
+poleheight: 1.5
+bone: NULL
+flint: NULL
+pottery: NULL
+rc: NULL
+soilsample: NULL
+crate: NULL
+location: NULL
+the_geom: 739943.60808627, 3373217.5466113, 1452.1891793155
+</description><LookAt><longitude>35.4991377749059</longitude><latitude>30.4672489448774</latitude><altitude>0</altitude><range>10</range><tilt>0</tilt><heading>0</heading></LookAt><styleUrl>#msn_GR</styleUrl><Point><altitudeMode>absolute</altitudeMode><coordinates>739943.60808627, 3373217.5466113, 1452.1891793155</coordinates></Point></Placemark><Placemark><name>50035</name><description>gid: 51
+basket: 50035
+chk: 3
+d_code: GR-GROUND_SHOT
+locus: 70010
+square: a4
+date: 70410
+area: D
+publication: KIS10
+heightinstrument: 1.53
+poleheight: 1.5
+bone: 1
+flint: NULL
+pottery: 1
+rc: NULL
+soilsample: NULL
+crate: 8,41
+location: Storage
+the_geom: 739948.96390979, 3373215.1243862, 1451.1148311945
+</description><LookAt><longitude>35.4991377749059</longitude><latitude>30.4672489448774</latitude><altitude>0</altitude><range>10</range><tilt>0</tilt><heading>0</heading></LookAt><styleUrl>#msn_GR</styleUrl><Point><altitudeMode>absolute</altitudeMode><coordinates>739948.96390979, 3373215.1243862, 1451.1148311945</coordinates></Point></Placemark><Placemark><name>50792</name><description>gid: 808
+basket: 50792
+chk: 84
+d_code: VS-COMPLETE_VESSEL
+locus: 7081
+square: B2
+date: 072910
+area: D
+publication: KIS10
+heightinstrument: 1.496
+poleheight: 2.5
+bone: NULL
+flint: NULL
+pottery: NULL
+rc: NULL
+soilsample: NULL
+crate: NULL
+location: NULL
+the_geom: 739943.2752138, 3373207.7099955, 1451.0218463013
+</description><LookAt><longitude>35.4991377749059</longitude><latitude>30.4672489448774</latitude><altitude>0</altitude><range>10</range><tilt>0</tilt><heading>0</heading></LookAt><styleUrl>#msn_GR</styleUrl><Point><altitudeMode>absolute</altitudeMode><coordinates>739943.2752138, 3373207.7099955, 1451.0218463013</coordinates></Point></Placemark><Placemark><name>50049</name><description>gid: 65
+basket: 50049
+chk: 17
+d_code: CP-COPPER_PIN
+locus: 7002
+square: A4
+date: 70410
+area: D
+publication: KIS10
+heightinstrument: 1.53
+poleheight: 1.5
+bone: NULL
+flint: NULL
+pottery: NULL
+rc: NULL
+soilsample: NULL
+crate: 58
+location: Storage
+the_geom: 739951.14909114, 3373216.4942352, 1451.0779563521
+</description><LookAt><longitude>35.4991377749059</longitude><latitude>30.4672489448774</latitude><altitude>0</altitude><range>10</range><tilt>0</tilt><heading>0</heading></LookAt><styleUrl>#msn_GR</styleUrl><Point><altitudeMode>absolute</altitudeMode><coordinates>739951.14909114, 3373216.4942352, 1451.0779563521</coordinates></Point></Placemark><Placemark><name>50083</name><description>gid: 99
+basket: 50083
+chk: 28
+d_code: PR-POLISHING_STONE
+locus: 7012
+square: A2
+date: 70510
+area: D
+publication: KIS10
+heightinstrument: 1.542
+poleheight: 1.5
+bone: NULL
+flint: NULL
+pottery: NULL
+rc: NULL
+soilsample: NULL
+crate: 58
+location: Storage
+the_geom: 739941.87540505, 3373217.7250988, 1452.3193236369
+</description><LookAt><longitude>35.4991377749059</longitude><latitude>30.4672489448774</latitude><altitude>0</altitude><range>10</range><tilt>0</tilt><heading>0</heading></LookAt><styleUrl>#msn_GR</styleUrl><Point><altitudeMode>absolute</altitudeMode><coordinates>739941.87540505, 3373217.7250988, 1452.3193236369</coordinates></Point></Placemark><Placemark><name>50429</name><description>gid: 445
+basket: 50429
+chk: 13
+d_code: LW-LOOM_WEIGHT
+locus: 7045
+square: A1
+date: 072110
+area: D
+publication: KIS10
+heightinstrument: 1.464
+poleheight: 1.486
+bone: NULL
+flint: NULL
+pottery: NULL
+rc: NULL
+soilsample: NULL
+crate: 58,58
+location: Storage
+the_geom: 739936.91126885, 3373216.2915137, 1451.380207806
+</description><LookAt><longitude>35.4991377749059</longitude><latitude>30.4672489448774</latitude><altitude>0</altitude><range>10</range><tilt>0</tilt><heading>0</heading></LookAt><styleUrl>#msn_GR</styleUrl><Point><altitudeMode>absolute</altitudeMode><coordinates>739936.91126885, 3373216.2915137, 1451.380207806</coordinates></Point></Placemark><Placemark><name>50530</name><description>gid: 546
+basket: 50530
+chk: 53
+d_code: BA-BONE_ARTIFACT
+locus: 7040
+square: A2
+date: 072210
+area: D
+publication: KIS10
+heightinstrument: 1.466
+poleheight: 1.486
+bone: NULL
+flint: NULL
+pottery: NULL
+rc: NULL
+soilsample: NULL
+crate: 58
+location: Storage
+the_geom: 739943.76552732, 3373217.286004, 1450.978862095
+</description><LookAt><longitude>35.4991377749059</longitude><latitude>30.4672489448774</latitude><altitude>0</altitude><range>10</range><tilt>0</tilt><heading>0</heading></LookAt><styleUrl>#msn_GR</styleUrl><Point><altitudeMode>absolute</altitudeMode><coordinates>739943.76552732, 3373217.286004, 1450.978862095</coordinates></Point></Placemark><Placemark><name>50540</name><description>gid: 556
+basket: 50540
+chk: 63
+d_code: HT-HEMETITE
+locus: 7054
+square: A1
+date: 072210
+area: D
+publication: KIS10
+heightinstrument: 1.466
+poleheight: 1.486
+bone: NULL
+flint: NULL
+pottery: NULL
+rc: NULL
+soilsample: NULL
+crate: 58
+location: Storage
+the_geom: 739937.05943091, 3373218.3309747, 1450.9445718371
+</description><LookAt><longitude>35.4991377749059</longitude><latitude>30.4672489448774</latitude><altitude>0</altitude><range>10</range><tilt>0</tilt><heading>0</heading></LookAt><styleUrl>#msn_GR</styleUrl><Point><altitudeMode>absolute</altitudeMode><coordinates>739937.05943091, 3373218.3309747, 1450.9445718371</coordinates></Point></Placemark></Document></kml>

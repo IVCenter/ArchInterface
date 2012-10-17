@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>KISterrain2.kml</name>
+	<open>1</open>
+	<Style id="sn_ylw-pushpin001">
+	</Style>
+	<Style id="sn_ylw-pushpin">
+	</Style>
+	<Style id="sn_ylw-pushpin21">
+	</Style>
+	<Style id="sn_ylw-pushpin22">
+	</Style>
+	<Style id="sn_ylw-pushpin01">
+	</Style>
+	<Placemark>
+		<name>PointCloud</name>
+		<styleUrl>#sn_ylw-pushpin</styleUrl>
+		<Model id="model_3">
+			<altitudeMode>1</altitudeMode>
+			<Location>
+				<longitude>39912.180</longitude>
+				<latitude>73008.990</latitude>
+				<altitude>1533.760</altitude>
+			</Location>
+			<Orientation>
+				<heading>-14</heading>
+				<tilt>65</tilt>
+				<roll>-7</roll>
+			</Orientation>
+			<Scale>
+				<x>9</x>
+				<y>9</y>
+				<z>9</z>
+			</Scale>
+			<Link>
+				<href>KISsparse.ply</href>
+			</Link>
+			<ResourceMap>
+			</ResourceMap>
+		</Model>
+	</Placemark>		
+</Document>
+</kml>

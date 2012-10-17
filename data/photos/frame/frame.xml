@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<transform>
+		<Location>
+			<easting>0</easting>
+			<northing>0</northing>
+			<elevation>0</elevation>
+		</Location>
+		<Orientation>
+			<heading>90</heading>
+			<tilt>0</tilt>
+			<roll>20</roll>
+		</Orientation>
+		<Scale>
+			<x>0.1</x>
+			<y>0.1</y>
+			<z>0.1</z>
+		</Scale>
+	</transform>
