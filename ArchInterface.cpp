@@ -1256,7 +1256,7 @@ string getWorkingDir()
 {
         vector< vector<string> > output;
         output = parseConfigFile();
-        string dir = output[0][4];
+        string dir = output[0][5];
         return dir;
 
 }
@@ -4949,11 +4949,11 @@ void syncLogon(string table)
     {
         vector< vector<string> > output;
         output = parseConfigFile();
-        string local = output[0][1];
+        string local = output[0][2];
         string central = local;
         if(output.size() > 1)
         {
-            central = output[1][1];
+            central = output[1][2];
         }
 
         if (local != central)
