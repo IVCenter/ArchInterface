@@ -8,13 +8,14 @@
 		<Build>
 			<Target title="Debug">
 				<Option output="ArchInterface" prefix_auto="1" extension_auto="1" />
-				<Option object_output="C:\ArchInterface\\.objs" />
+				<Option object_output="C:\ArchInterface\.objs" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
 					<Add directory="C:\ArchInterface\" />
 					<Add directory="C:\ArchInterface\curl\lib64\" />
+					<Add directory="C:\ArchInterface\pgsql" />
 				</Compiler>
 				<Linker>
 					<Add library="mxml\mxml1.lib" />
