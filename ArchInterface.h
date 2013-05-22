@@ -12,11 +12,12 @@
 #include <vector>
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <mxml.h>
+//#include <mxml.h>
 
 //for Windows
 #ifdef _WIN32
 #include <direct.h>
+#include <mxml/mxml.h>
 #endif
 
 //#include <include/curl/curl.h>
@@ -186,6 +187,10 @@ void createDefaultTable(string table, string server, string type, string fieldLi
 
 int tableCheck(string table, string server);
 
+bool fileExists(string file);
+
 void defaultInstall(string server);
 
-bool fileExists(string file);
+int countTableRows(string table);
+
+void installPostGISDatabase(string db);

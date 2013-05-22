@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><kml><Document><name>query</name><query>publication='KIS10'</query><timestamp>2012036235837</timestamp><Placemark><name>50000</name><description>gid: 16
+<?xml version="1.0" encoding="utf-8"?><kml><Document><name>allkis</name><query>publication='KIS10'</query><timestamp>2012036235837</timestamp><Placemark><name>50000</name><description>gid: 16
 basket: 50000
 chk: 1
 d_code: ZA-CHECK_SHOT

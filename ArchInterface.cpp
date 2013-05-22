@@ -484,6 +484,23 @@ bool setupConfigFile()
 //data[4][1] = "";
 return corrected;
 }
+bool fileExists(string filename)
+{
+    bool check;
+    FILE *fp;
+            fp = fopen(filename.c_str(),"r");
+            if(fp == NULL)
+            {
+            std::cerr << "Unable to open file: " << filename << std::endl;
+            check = false;
+            }
+            else
+            {
+                check = true;
+            }
+            fclose(fp);
+    return check;
+}
 void defaultInstall(string server)
 {
     cout << "Will Now Install all default Data, if already exists will ask to confirm reinstall\n";
@@ -494,6 +511,86 @@ void defaultInstall(string server)
     PGconn          *conn;
     const char*    c;
 
+
+   // string filename = "default_config.ini";
+    string cfile = "config.ini";
+
+    if(!fileExists(cfile))
+    {
+        if(fileExists("default_config.ini"))
+        {
+            string filename = "default_config.ini";
+            FILE *fp;
+            fp = fopen(filename.c_str(),"r");
+            if(fp == NULL)
+            {
+            std::cerr << "Unable to open file: " << filename << std::endl;
+            return;
+            }
+            fclose(fp);
+
+            ifstream in(filename.c_str());
+            stringstream buffer;
+            buffer << in.rdbuf();
+            string contents(buffer.str());
+
+            const char* file = "config.ini";
+            fp = fopen(file, "w");
+            fprintf(fp, contents.c_str());
+            fclose(fp);
+
+
+            vector< vector<string> > output;
+        //string cinfo = "";
+       // const char* c;
+
+          output = parseConfigFile();
+          string dbname = output[0][1];
+          string password = "";
+          string cPassword = "000";
+          string folder = output[0][5];
+
+          while (cPassword != password && password == "")
+          {
+          cout << "This is a new config file, please enter your postgis password: ";
+          cin >> password;
+          cin.ignore();
+          cout << "Enter a second time to confirm: ";
+          cin >> cPassword;
+          cin.ignore();
+          }
+          output[0][4] = password;
+          contents = "";
+          for(int i=0; i < output.size(); i++)
+          {
+               contents.append("Server_Name=" + output[i][0] + "\n");
+               contents.append("dbname=" + output[i][1] + "\n");
+               contents.append("host=" + output[i][2] + "\n");
+               contents.append("user=" + output[i][3] + "\n");
+               contents.append("password=" + output[i][4] + "\n");
+               contents.append("folder=" + output[i][5]);
+               if((i+1) != output.size())
+               {
+                   contents.append("\n");
+               }
+
+          }
+
+            fp = fopen(file, "w");
+            fprintf(fp, contents.c_str());
+            fclose(fp);
+          cout << "Password Saved!\n";
+          return;
+        }
+        else
+        {
+            cout << "No default config file available, please redownload!\n";
+            return;
+        }
+
+    }
+
+
     //string serverName = "Local";
     param = connectParam(server);
 
@@ -503,19 +600,59 @@ void defaultInstall(string server)
         conn = PQconnectdb(c);
         if (PQstatus(conn) == CONNECTION_BAD)
         {
-            cout << "Can't Connect to Local Server, Check Connection and Config Ip Address File\n";
+            cout << "Can't Connect to Local Server, Will check if PostGIS installed\n";
+            param = connectParam("postgis");
+
+            if(param != "")
+            {
+            c = param.c_str();
+            conn = PQconnectdb(c);
+            if (PQstatus(conn) == CONNECTION_BAD)
+            {
+            cout << "PostGIS is not available on this build of PostgreSQL\n";
             return;
+            }
+            else
+            {
+                cout << "PostGIS is installed, but not ArchField database, will now create ArchField Database\n";
+                installPostGISDatabase("archfield");
+
+
+                param = connectParam(server);
+
+                if(param != "")
+                {
+                c = param.c_str();
+                conn = PQconnectdb(c);
+                if (PQstatus(conn) == CONNECTION_BAD)
+                {
+                    cout << "ArchField database install prohibitted, quitting\n";
+                    return;
+                }
+                else
+                {
+                    cout << "ArchField database install succeeded, continuing with install!\n";
+                }
+                }
+
+
+            }
+            }
+
         }
     }
     else
     {
+
+        //Check if PostGIS database installed
+
         return;
     }
 
     if(!tableExists("geometry_columns", server) > 0)
     {
         cout << "PostGIS has not been properly installed cannot find geometry_columns\n";
-        return;
+       // return;
     }
     if(!tableExists("spatial_ref_sys", server) > 0)
     {
@@ -550,6 +687,7 @@ void defaultInstall(string server)
                     //cout << "Keeping OUniqueID!\n";
                 }
         }
+
     }
 
             if(true)
@@ -619,6 +757,16 @@ void defaultInstall(string server)
         {
             cout << "File " << file << " not located in backup directory of ArchInterface, Skipping!\n";
         }
+            string tableN = "khi2011q_a";
+            int trows = countTableRows(tableN);
+            if(trows > 0)
+            {
+            cout << "Total Rows in " << tableN << " are " << trows << "\n";
+            }
+            else
+            {
+            cout << "Import for " << tableN << " failed!\n";
+            }
         }
 
         if(true)
@@ -634,13 +782,25 @@ void defaultInstall(string server)
         {
             cout << "File " << file << " not located in backup directory of ArchInterface, Skipping!\n";
         }
+            string tableN = "khi2011q_l";
+            int trows = countTableRows(tableN);
+            if(trows > 0)
+            {
+            cout << "Total Rows in " << tableN << " are " << trows << "\n";
+            }
+            else
+            {
+            cout << "Import for " << tableN << " failed!\n";
+            }
         }
     }
 
     cout << "\nThese are the currently installed tables for the PostGIS database:\n";
     listTables("");
 
-    cout << "\n\nInstallation Finished\n";
+    cout << "\nInstallation Finished, Press any key to exit!\n";
+
+    cin.get();
 
 }
 void createDefaultTable(string table, string server, string type, string fieldList)
@@ -1146,11 +1306,15 @@ mkdir(dir.c_str(),0750);
 void testCode()
 {
 //Add folders
+/*
 string dir;
 dir = "queries";
 makeDir(dir);
 dir = "data";
 makeDir(dir);
+*/
+
+countTableRows("d_code");
 
 
 
@@ -4523,12 +4687,19 @@ void commandLineParse(int argc, char *argv[])
             break;
 
      case 'i':   cout << "You have selected to Install ArchInterface Default Data\n";
-                cout << "Please enter which server from Config file\nLocal = \"Local\" Remote(i.e. CSRO) = \"Central\" ";
+               // cout << "Please enter which server from Config file\nLocal = \"Local\" Remote(i.e. CSRO) = \"Central\" ";
                 if(true)
                 {
                         string serverName;
+                      if(false)
+                      {
                         cin >> serverName;
                         cin.ignore();
+                      }
+                      else
+                      {
+                       serverName = "Local";
+                      }
                       if (serverName != "")
                       {
                         defaultInstall(serverName);
@@ -4767,6 +4938,21 @@ void commandLineParse(int argc, char *argv[])
 
     }
 }
+int countTableRows(string table)
+{
+    string query;
+    PGresult        *res;
+
+
+  query = "SELECT * FROM ";
+  query.append(table);
+    res = queryPG(query,"");
+
+    int rows = PQntuples(res);
+    cout << rows << "\n";
+return rows;
+}
+
 void listTables(string table)
 {
     string query;
@@ -5035,6 +5221,18 @@ if(output.size() > 0)
         cinfo.append(output[1][3]);
         cinfo.append(" password=");
         cinfo.append(output[1][4]);       // c = cinfo.c_str ();
+    }
+    else if (serverName == "PostGIS")
+    {
+        cinfo = "dbname=";
+        cinfo.append("postgis");
+        cinfo.append(" host=");
+        //cinfo.append("192.168.0.103");
+        cinfo.append(output[0][2]);
+        cinfo.append(" user=");
+        cinfo.append(output[0][3]);
+        cinfo.append(" password=");
+        cinfo.append(output[0][4]);        //c = cinfo.c_str ();
     }
 }
     return cinfo;
@@ -6591,7 +6789,7 @@ rows = PQntuples(res);
 
             query = "SELECT AddGeometryColumn('public', '";
             query.append(tableS);
-            query.append("', 'the_geom', 32636, 'POINT', 4)");
+            query.append("', 'the_geom', 32636, 'POINT', 3)");
 
             res = queryPG(query,server);
 
@@ -6601,7 +6799,7 @@ rows = PQntuples(res);
         {
             query = "SELECT AddGeometryColumn('public', '";
             query.append(tableS);
-            query.append("', 'the_geom', 32636, 'POLYGON', 4)");
+            query.append("', 'the_geom', 32636, 'POLYGON', 3)");
 
             res = queryPG(query,server);
 
@@ -7005,5 +7203,19 @@ if (check == "y")
 }
 
 
+
+}
+void installPostGISDatabase(string db)
+{
+        string query;
+        PGresult        *res;
+
+
+         query = "create role owner with createdb createrole login";
+         res = queryPG(query,"");
+         query = "create database ";
+         query.append(db);
+         query.append(" with owner=postgres template=postgis");
+         res = queryPG(query,"");
 
 }

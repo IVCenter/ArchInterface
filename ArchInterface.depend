@@ -1,23 +1,39 @@
 # depslib dependency file v1.0
-1349408007 source:c:\archinterface\archinterface.cpp
+1362997066 source:c:\archinterface\archinterface.cpp
 	"ArchInterface.h"
 
-1349384460 c:\archinterface\archinterface.h
+1362997100 c:\archinterface\archinterface.h
 	<iostream>
 	<iomanip>
 	<fstream>
 	<stdio.h>
 	<time.h>
 	<cstdlib>
-	<pgsql/libpq-fe.h>
+	<libpq-fe.h>
 	<string>
 	<sstream>
 	<vector>
-	<mxml.h>
+	<sys/types.h>
+	<sys/stat.h>
+	<direct.h>
+	<mxml/mxml.h>
 
 1273824680 c:\archinterface\\pgsql\libpq-fe.h
 	<stdio.h>
 	"postgres_ext.h"
 
 1273824681 c:\archinterface\\pgsql\postgres_ext.h
+
+1362321004 c:\archinterface\pgsql\libpq-fe.h
+	<stdio.h>
+	"postgres_ext.h"
+
+1362321004 c:\archinterface\pgsql\postgres_ext.h
+
+1362321004 c:\archinterface\\mxml\mxml.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<errno.h>
 
